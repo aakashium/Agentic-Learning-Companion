@@ -10,6 +10,8 @@ torch
 fastapi
 uvicorn
 google-generativeai
+langchain-chroma
+langchain-huggingface
 langchain-text-splitters
 python-dotenv
 requests

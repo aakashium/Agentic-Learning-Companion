@@ -1,6 +1,4 @@
-# =========================
-# GLOBAL PYTHON IGNORE
-# =========================
+
 __pycache__/
 **/__pycache__/
 *.pyc
@@ -29,9 +27,8 @@ dist/
 # Jupyter Notebooks checkpoints
 .ipynb_checkpoints/
 
-# =========================
+
 # FASTAPI PROJECT (backend)
-# =========================
 backend/__pycache__/
 backend/**/*.pyc
 
@@ -64,19 +61,7 @@ tmp/
 .cache/
 **/.cache/
 
-# =========================
-# FRONTEND (React / Vite / Next.js)
-# =========================
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-dist/
-build/
-.cache/
-.next/
-out/
+
 
 # local environment configs
 *.local
@@ -85,9 +70,7 @@ out/
 frontend/dist/
 frontend/build/
 
-# =========================
-# EDITOR CONFIGS
-# =========================
+
 # VS Code
 .vscode/
 *.code-workspace
@@ -100,35 +83,32 @@ frontend/build/
 .DS_Store
 Thumbs.db
 
-# =========================
+
 # DOCKER / CONTAINERS
-# =========================
+
 docker-data/
 **/docker-data/
 *.pid
 
-# =========================
-# MLFLOW / METRICS (future-proof)
-# =========================
+
+# MLFLOW / METRICS 
+
 mlruns/
 mlartifacts/
 
-# =========================
-# STREAMLIT (future-proof)
-# =========================
+
+# STREAMLIT 
 .streamlit/
 
-# =========================
+
 # TEST ARTIFACTS
-# =========================
 coverage/
 htmlcov/
 .coverage
 pytest_cache/
 
-# =========================
 # OTHER COMMON IGNORE
-# =========================
+
 *.swp
 *.swo
 *.tmp

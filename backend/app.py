@@ -7,6 +7,7 @@ from backend.routers.eval_router import router as eval_router
 from backend.routers.debug_router import router as debug_router
 from backend.routers.health_router import router as health_router
 
+
 app = FastAPI(title="Agentic Learning Companion - Backend")
 
 app.include_router(ingest_router, prefix="/ingest")
