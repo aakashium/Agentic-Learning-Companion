@@ -1,3 +1,132 @@
-.env
-.venv
-config.py
+# =========================
+# GLOBAL PYTHON IGNORE
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyd
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+*.env
+.env.local
+.env.*.local
+
+# Python package build
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
+
+# =========================
+# FASTAPI PROJECT (backend)
+# =========================
+backend/__pycache__/
+backend/**/*.pyc
+
+# Chroma vector store data
+backend/vectorstore/db/
+**/chroma/
+**/chroma.db
+**/index/
+**/index/*.bin
+
+# Whoosh BM25 index files
+backend/vectorstore/bm25_index/
+backend/**/bm25_index/
+**/*.toc
+**/*.seg
+**/*.dir
+**/*.dat
+
+# Logs
+logs/
+*.log
+
+# Uploaded files or extracted data
+uploads/
+data/
+temp/
+tmp/
+
+# Cache
+.cache/
+**/.cache/
+
+# =========================
+# FRONTEND (React / Vite / Next.js)
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+dist/
+build/
+.cache/
+.next/
+out/
+
+# local environment configs
+*.local
+
+# Production build outputs
+frontend/dist/
+frontend/build/
+
+# =========================
+# EDITOR CONFIGS
+# =========================
+# VS Code
+.vscode/
+*.code-workspace
+
+# JetBrains
+.idea/
+*.iml
+
+# Mac / Windows
+.DS_Store
+Thumbs.db
+
+# =========================
+# DOCKER / CONTAINERS
+# =========================
+docker-data/
+**/docker-data/
+*.pid
+
+# =========================
+# MLFLOW / METRICS (future-proof)
+# =========================
+mlruns/
+mlartifacts/
+
+# =========================
+# STREAMLIT (future-proof)
+# =========================
+.streamlit/
+
+# =========================
+# TEST ARTIFACTS
+# =========================
+coverage/
+htmlcov/
+.coverage
+pytest_cache/
+
+# =========================
+# OTHER COMMON IGNORE
+# =========================
+*.swp
+*.swo
+*.tmp
+*.bak
+*.old
