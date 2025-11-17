@@ -2,10 +2,14 @@
 # GLOBAL PYTHON IGNORE
 # =========================
 __pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
 *.py[cod]
 *$py.class
 *.so
-*.pyd
+
 
 # Virtual environments
 venv/
