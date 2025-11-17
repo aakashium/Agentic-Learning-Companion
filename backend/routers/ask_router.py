@@ -1,26 +1,24 @@
 from fastapi import APIRouter, Query
-from backend.vectorstore.chroma_client import ChromaVectorStore
-from backend.models.llm_client import LLMClient
-from backend.services.rag_engine import RAGEngine
+from backend.vectorstore import VectorStore
+from backend.llm_client import LLMClient
 
 router = APIRouter()
-
-vectorstore = ChromaVectorStore()
+vs = VectorStore()
 llm = LLMClient()
-rag = RAGEngine()  
 
 @router.get("/")
-def ask_question(q: str = Query(...), k: int = 5):
-    """
-    Hybrid RAG answer:
-    - BM25 lexical ranking
-    - SentenceTransformer semantic ranking
-    - Combined scores
-    """
-    result = rag.answer(q, k=k)
+def ask(q: str = Query(...)):
+    docs = vs.search(q)
+    context = "\n\n".join([d.page_content for d in docs])
 
-    return {
-        "query": q,
-        "answer": result["answer"],
-        "retrieved": result["retrieved"]
-    }
+    prompt = f"""
+Use ONLY this context to answer:
+
+{context}
+
+Question: {q}
+    """
+
+    ans = llm.generate(prompt)
+
+    return {"answer": ans, "sources": [d.page_content for d in docs]}
